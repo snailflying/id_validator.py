@@ -21,12 +21,15 @@ def is_valid(id_card, strict_mode=False):
     id_card = str(id_card)
     code = helper.get_id_argument(id_card)
     if not helper.check_address_code(code['address_code'], code['birthday_code'], strict_mode):
+        print('address_code 错误:',code['address_code'])
         return False
 
     if not helper.check_birthday_code(code['birthday_code']):
+        print('birthday_code 错误:',code['birthday_code'])
         return False
 
     if not helper.check_order_code(code['order_code']):
+        print('order_code 错误:',code['order_code'])
         return False
 
     if code['type'] == 15:
@@ -34,6 +37,7 @@ def is_valid(id_card, strict_mode=False):
 
     check_bit = helper.generator_check_bit(code['body'])
     if check_bit != code['check_bit']:
+        print('check_bit 错误:',check_bit)
         return False
 
     return True
@@ -52,7 +56,7 @@ def get_info(id_card, strict_mode=False):
     id_card = str(id_card)
 
     if not is_valid(id_card, strict_mode):
-        return False
+        return dict()
 
     code = helper.get_id_argument(id_card)
     address_info = helper.get_address_info(code['address_code'], code['birthday_code'], strict_mode)

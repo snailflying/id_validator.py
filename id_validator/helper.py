@@ -142,7 +142,7 @@ def check_address_code(address_code, birthday_code, strict_mode=False):
     """
     address_info = get_address_info(address_code, birthday_code, strict_mode)
     if (address_code[0:1] == '8' and address_info['province'] == '') or \
-            (address_code[0:1] != '8' and (address_info['district'] == '' or address_info['province'] == '')):
+            (address_code[0:1] != '8' and (address_info['province'] == '')):
         return False
     return True
 

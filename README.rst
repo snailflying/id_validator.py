@@ -6,10 +6,6 @@
 -  `Ruby 版本 <https://github.com/renyijiu/id_validator>`__
 -  `JavaScript 版本 <https://github.com/mc-zone/IDValidator>`__
 
-
-.. image:: https://github.com/jxlwqq/id-validator.py/actions/workflows/testing.yml/badge.svg
-    :target: https://github.com/jxlwqq/id-validator.py/actions/workflows/testing.yml
-
 安装
 ----
 
